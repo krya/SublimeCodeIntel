@@ -12,10 +12,27 @@
  src_files.extend(
 @@ -78,7 +79,7 @@
                  'Lib/Src']
-
+ 
  data_files = ['CSS/default.css']
 -libraries = []
 +libraries = ['pcre']
  defines = []
  extra_compile_args = []
  extra_link_args = []
+@@ -103,12 +104,12 @@
+     #libraries.append('stdc++')
+     #extra_compile_args.append('-fPIC')
+     #extra_link_args.append('-shared')
+-    extra_objects = ['libpcre.a']
++    extra_objects = ['/tmp/pcre-8.21/.libs/libpcre.a']
+ else:
+     if sys.platform.startswith("linux"):
+         os.environ['CC'] = 'g++'
+         defines.append(('GTK',None)) 
+-    extra_objects = ['libpcre.a']
++    extra_objects = ['/tmp/pcre-8.21/.libs/libpcre.a']
+ 
+     # Depending on your gcc and Python version, one of both of the following lines might
+     # be necessary
+
+
